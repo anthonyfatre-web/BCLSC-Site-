@@ -409,22 +409,41 @@
   }
 
   (async () => {
-    try {
-      updateBadge.textContent = "Chargement…";
-      const url = `${WORKER_URL}?team=${encodeURIComponent(TEAM_ID)}`;
-      const res = await fetch(url, { cache: "no-store" });
-      if (!res.ok) throw new Error("HTTP " + res.status);
+  try {
+    updateBadge.textContent = "Chargement…";
 
-      const data = await res.json();
-      if (!data || data.ok !== true) throw new Error(data?.error || "Réponse invalide du service FFBB");
+    const url = `${WORKER_URL}?team=${encodeURIComponent(TEAM_ID)}&v=${Date.now()}`;
+    const res = await fetch(url, { cache: "no-store" });
 
-      render(data);
-      fillTickerFromData(data);
-    } catch (e) {
-      renderError("Impossible de récupérer les données : " + (e?.message || e));
+    const contentType = (res.headers.get("content-type") || "").toLowerCase();
+    const raw = await res.text();
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} — ${raw.slice(0, 140)}`);
     }
-  })();
+
+    let data;
+    if (contentType.includes("application/json")) {
+      data = JSON.parse(raw);
+    } else {
+      // si le worker renvoie autre chose que du JSON
+      throw new Error(`Réponse non-JSON — ${raw.slice(0, 140)}`);
+    }
+
+    if (!data || data.ok !== true) {
+      throw new Error(data?.error || "Réponse invalide du service FFBB");
+    }
+
+    render(data);
+    fillTickerFromData(data);
+
+  } catch (e) {
+    renderError("Worker FFBB indisponible : " + (e?.message || e));
+  }
+})();
+
 </script>
 
 </body>
 </html>
+
