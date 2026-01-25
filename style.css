@@ -2711,4 +2711,150 @@ body.nav-open{ overflow: hidden; }
     gap: .8rem;
   }
 }
+/* =========================
+   MENU MOBILE PREMIUM (drawer)
+   À coller TOUT EN BAS
+   ========================= */
+
+@media (max-width: 960px){
+
+  /* voile plus clean */
+  #navBackdrop{
+    background: rgba(0,0,0,.55) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+
+  /* Panneau */
+  .nav .nav-links{
+    display: none !important;
+
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(84vw, 340px);
+
+    padding: 1.1rem 1rem;
+    padding-top: 5.1rem; /* laisse respirer sous le header */
+
+    background: linear-gradient(180deg,
+      rgba(16, 24, 40, 0.96),
+      rgba(10, 15, 26, 0.98)
+    ) !important;
+
+    border-left: 1px solid rgba(255,255,255,0.12);
+    box-shadow: -30px 0 90px rgba(0,0,0,0.75);
+
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+
+    z-index: 9100 !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ouvert */
+  .nav.nav-mobile-open .nav-links{
+    display: flex !important;
+  }
+
+  /* petit “titre” au-dessus des liens (sans modifier le HTML) */
+  .nav.nav-mobile-open .nav-links::before{
+    content: "Navigation";
+    display: block;
+    font-size: .78rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: .35rem;
+    padding: .2rem .25rem;
+  }
+
+  /* liens = style premium */
+  .nav.nav-mobile-open .nav-links a{
+    width: 100%;
+    padding: .9rem .95rem !important;
+
+    border-radius: 14px !important;
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.10) !important;
+
+    color: rgba(255,255,255,0.92) !important;
+    font-weight: 600;
+    font-size: 1.02rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+
+  /* petit chevron “>” */
+  .nav.nav-mobile-open .nav-links a::after{
+    content: "›";
+    font-size: 1.4rem;
+    line-height: 1;
+    opacity: .65;
+    transform: translateX(0);
+    transition: transform .18s ease, opacity .18s ease;
+  }
+
+  /* hover/tap */
+  .nav.nav-mobile-open .nav-links a:hover,
+  .nav.nav-mobile-open .nav-links a:active{
+    background: rgba(213,165,82,0.10) !important;
+    border-color: rgba(213,165,82,0.32) !important;
+    transform: translateX(-2px);
+  }
+
+  .nav.nav-mobile-open .nav-links a:hover::after,
+  .nav.nav-mobile-open .nav-links a:active::after{
+    transform: translateX(3px);
+    opacity: .9;
+  }
+
+  /* lien actif (si tu as aria-current="page" sur le lien courant) */
+  .nav.nav-mobile-open .nav-links a[aria-current="page"]{
+    background: rgba(213,165,82,0.14) !important;
+    border-color: rgba(213,165,82,0.45) !important;
+    color: #fff !important;
+  }
+
+  /* CTA en bas (si tu l’utilises) */
+  .nav .nav-cta{
+    display: none !important;
+
+    position: fixed !important;
+    right: 0;
+    bottom: 0;
+    width: min(84vw, 340px);
+
+    padding: 1rem;
+    background: linear-gradient(to top,
+      rgba(10, 15, 26, 0.98),
+      rgba(10, 15, 26, 0)
+    ) !important;
+
+    z-index: 9101 !important;
+  }
+
+  .nav.nav-mobile-open .nav-cta{
+    display: flex !important;
+    gap: .6rem;
+    flex-direction: column;
+  }
+
+  /* bouton burger au-dessus de tout */
+  .nav-toggle{
+    position: relative;
+    z-index: 9205 !important;
+  }
+}
+@media (max-width:960px){
+  .nav-left img{ width: 44px; height:auto; }
+  .brand-title{ font-size: 1rem; line-height: 1.1; }
+}
+
 
