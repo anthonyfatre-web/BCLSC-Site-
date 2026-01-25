@@ -2856,5 +2856,138 @@ body.nav-open{ overflow: hidden; }
   .nav-left img{ width: 44px; height:auto; }
   .brand-title{ font-size: 1rem; line-height: 1.1; }
 }
+/* =========================
+   CLUB – TIMELINE PREMIUM
+   (CSS only, sans toucher HTML)
+   ========================= */
+
+.club-timeline{
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.25rem;
+  position: relative;
+}
+
+/* chaque item + ligne verticale */
+.timeline-item{
+  position: relative;
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding-bottom: .2rem;
+}
+
+/* ligne qui relie les points (sauf le dernier) */
+.timeline-item::after{
+  content:"";
+  position:absolute;
+  left: 10px;          /* centre du dot */
+  top: 28px;           /* sous le dot */
+  bottom: -12px;       /* prolonge un peu */
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(213,165,82,0.35),
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.00)
+  );
+}
+.timeline-item:last-child::after{ display:none; }
+
+/* dot plus premium */
+.timeline-dot{
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  margin-top: .7rem;
+  background: rgba(213,165,82,0.95);
+  box-shadow:
+    0 0 0 6px rgba(213,165,82,0.14),
+    0 10px 30px rgba(0,0,0,0.45);
+  position: relative;
+}
+.timeline-dot::before{
+  content:"";
+  position:absolute;
+  inset: 3px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* carte : meilleur fond + highlight + hover */
+.timeline-content{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: linear-gradient(
+    180deg,
+    rgba(15,23,42,0.78),
+    rgba(10,15,26,0.88)
+  );
+  padding: 1.05rem 1.15rem;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-content::before{
+  content:"";
+  position:absolute;
+  inset: 0;
+  background: radial-gradient(
+    900px 220px at 18% 0%,
+    rgba(213,165,82,0.14),
+    rgba(0,0,0,0)
+  );
+  pointer-events:none;
+}
+
+.timeline-content:hover{
+  border-color: rgba(213,165,82,0.30);
+  transform: translateY(-1px);
+  transition: transform .18s ease, border-color .18s ease;
+}
+
+/* year en badge (au lieu de texte simple) */
+.timeline-year{
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin: 0 0 .35rem;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.80);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+/* typographie plus “club premium” */
+.timeline-title{
+  margin: .05rem 0 .45rem;
+  font-size: 1.25rem;
+  letter-spacing: .01em;
+}
+.timeline-text{
+  margin: 0;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.65;
+}
+
+/* un petit rendu “étagé” sur desktop */
+@media (min-width: 980px){
+  .timeline-item:nth-child(2) .timeline-content{ margin-left: 10px; }
+  .timeline-item:nth-child(3) .timeline-content{ margin-left: 20px; }
+}
+
+/* mobile : respire mieux */
+@media (max-width: 600px){
+  .timeline-content{ padding: 1rem; border-radius: 16px; }
+  .timeline-title{ font-size: 1.15rem; }
+}
+
 
 
