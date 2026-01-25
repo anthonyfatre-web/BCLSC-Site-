@@ -207,6 +207,38 @@ main, header, footer{position:relative; z-index:1}
   pointer-events:none;
 }
 
+/* ===== Responsive layout (tablet + mobile) ===== */
+@media (max-width: 960px){
+  .section{ padding: 2.6rem 0; }
+  .title{ font-size: 1.75rem; }
+  .subtitle{ padding: 0 0.25rem; }
+
+  /* Présentation (photo + texte) */
+  .present-grid{ grid-template-columns: 1fr; }
+  .present-media{ min-height: 240px; }
+  .present-content{ padding: 1.35rem; }
+  .present-content h3{ font-size: 1.35rem; }
+
+  /* Hero CTA */
+  .hero .cta{ gap: .75rem; }
+}
+
+@media (max-width: 600px){
+  .section{ padding: 2.2rem 0; }
+
+  /* Photos trop grandes sur téléphone */
+  .present-media{ min-height: 190px; }
+  .present-media img{ transform: none; }
+
+  /* Boutons pleine largeur si besoin */
+  .present-actions a,
+  .hero .cta a{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
 .present-content{padding:1.8rem;display:flex;flex-direction:column;justify-content:center;gap:.75rem}
 .present-content h3{margin:0;font-size:1.55rem;line-height:1.2}
 .present-content p{margin:0;color:rgba(255,255,255,0.82)}
@@ -234,16 +266,7 @@ main, header, footer{position:relative; z-index:1}
   background:rgba(0,0,0,0.25);
 }
 
-/* Responsive */
-@media (max-width:960px){
-  .nav-links,.nav-cta{display:none}
-  .nav-toggle{display:block}
-  .nav.nav-mobile-open .nav-links,
-  .nav.nav-mobile-open .nav-cta{
-    display:flex;flex-direction:column;align-items:flex-start;
-    gap:.8rem;width:100%;padding:1rem 0;
-  }
-  .present-grid{grid-template-columns:1fr}
+.present-grid{grid-template-columns:1fr}
   .anthem{grid-template-columns:1fr}
 }
 /* ===== Feature cards (section "club moderne") ===== */
@@ -2531,16 +2554,17 @@ document.querySelectorAll(".insta-video-card").forEach(it => {
   .thanks-simple-head{flex-direction:column; align-items:flex-start;}
   .logo-wall--simple{ grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
-/* ===== NAV MOBILE : overlay + menu premium ===== */
+
+/* ===== NAV MOBILE : drawer + overlay (version stable) ===== */
 #navBackdrop{
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.55);
   backdrop-filter: blur(6px);
-  z-index: 45;            /* sous le header (50) */
   opacity: 0;
   pointer-events: none;
   transition: opacity .18s ease;
+  z-index: 60; /* sous le drawer, au-dessus du contenu */
 }
 #navBackdrop.is-active{
   opacity: 1;
@@ -2548,22 +2572,41 @@ document.querySelectorAll(".insta-video-card").forEach(it => {
 }
 
 /* Empêche le scroll derrière le menu */
-body.nav-open{
-  overflow: hidden;
-}
+body.nav-open{ overflow: hidden; }
 
-/* Menu mobile : meilleure lisibilité & clic facile */
 @media (max-width:960px){
-  .nav{
-    flex-wrap: wrap;
-    height: auto;
-    padding: .65rem 0;
+  /* base mobile */
+  .nav{ flex-wrap: wrap; height:auto; padding:.65rem 0; }
+  .nav-links,.nav-cta{ display:none; }
+  .nav-toggle{ display:block; }
+
+  /* Drawer panel */
+  .nav.nav-mobile-open{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(86vw, 360px);
+    padding: 1.05rem 1.1rem 1.25rem;
+    background: rgba(15,23,42,0.96);
+    border-left: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 18px 70px rgba(0,0,0,.75);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .9rem;
+  }
+
+  .nav.nav-mobile-open .nav-left{
+    width: 100%;
+    justify-content: space-between;
   }
 
   .nav.nav-mobile-open .nav-links,
   .nav.nav-mobile-open .nav-cta{
-    display: flex;
-    width: 100%;
+    display:flex !important;
+    width:100%;
   }
 
   .nav.nav-mobile-open .nav-links{
@@ -2571,11 +2614,9 @@ body.nav-open{
     gap: .65rem;
     padding: 1rem;
     margin-top: .8rem;
-
     border-radius: 1.2rem;
     border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(15,23,42,0.96);
-    box-shadow: 0 18px 50px rgba(0,0,0,.55);
+    background: rgba(0,0,0,0.18);
   }
 
   .nav.nav-mobile-open .nav-links a{
@@ -2595,188 +2636,7 @@ body.nav-open{
   .nav.nav-mobile-open .nav-cta{
     padding: .9rem 1rem 1.1rem;
     gap: .75rem;
-  }
-}
-/* ===== Instagram embeds: fix mobile ===== */
-.ig-embed,
-.insta-embed,
-.video-embed.insta-embed {
-  width: 100%;
-  overflow: visible !important;          /* IMPORTANT : évite la coupe */
-}
-
-/* Instagram injecte un blockquote + iframe interne */
-.instagram-media {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-/* Le wrapper ne doit pas bloquer la hauteur */
-.ig-embed,
-.insta-embed {
-  min-height: 420px;                      /* assure une zone visible */
-  border-radius: 14px;
-}
-
-@media (max-width: 900px){
-  .ig-embed,
-  .insta-embed {
-    min-height: 520px;                    /* reels = plus haut sur mobile */
-  }
-}
-
-/* Optionnel : évite que des cards coupent l’embed */
-.sponsor-card,
-.video-card,
-.insta-card {
-  overflow: visible;
-}
-/* =========================
-   NAV MOBILE (drawer + overlay)
-   ========================= */
-
-#navBackdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.62);
-  backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .18s ease;
-  z-index: 60;
-}
-#navBackdrop.is-active{
-  opacity: 1;
-  pointer-events: auto;
-}
-
-body.nav-open{
-  overflow: hidden;
-}
-
-/* Drawer */
-@media (max-width: 960px){
-  .nav{
-    position: relative;
-    z-index: 70;
-  }
-
-  .nav.nav-mobile-open{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: min(86vw, 360px);
-    padding: 1rem 1.1rem;
-    background: rgba(15,23,42,0.96);
-    border-left: 1px solid rgba(255,255,255,0.10);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 24px 80px rgba(0,0,0,0.70);
-    display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 1rem;
-  }
-
-  .nav.nav-mobile-open .nav-left{
-    gap: .75rem;
-  }
-
-  .nav.nav-mobile-open .nav-links,
-  .nav.nav-mobile-open .nav-cta{
-    display: flex !important;
-    flex-direction: column;
-    align-items: stretch;
-    gap: .85rem;
-    width: 100%;
-    padding: .4rem 0;
-  }
-
-  .nav.nav-mobile-open .nav-links a{
-    padding: .65rem .65rem;
-    border-radius: .9rem;
-    background: rgba(0,0,0,0.18);
-    border: 1px solid rgba(255,255,255,0.10);
-  }
-
-  .nav.nav-mobile-open .nav-links a:hover{
-    border-color: rgba(213,165,82,0.35);
   }
 }
-/* =========================
-   NAV MOBILE FIXED (drawer)
-   ========================= */
-
-#navBackdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s ease;
-  z-index: 60;
-}
-#navBackdrop.is-active{
-  opacity: 1;
-  pointer-events: auto;
-}
-
-body.nav-open{
-  overflow: hidden;
-}
-
-/* Drawer panel */
-@media (max-width:960px){
-
-  .nav.nav-mobile-open{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: min(86vw, 360px);
-
-    background: rgba(15,23,42,0.97);
-    border-left: 1px solid rgba(255,255,255,0.15);
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.4rem;
-    gap: 1.2rem;
-
-    z-index: 70;
-    box-shadow: -20px 0 80px rgba(0,0,0,0.75);
-  }
-
-  /* Show links properly */
-  .nav.nav-mobile-open .nav-links,
-  .nav.nav-mobile-open .nav-cta{
-    display: flex !important;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-  }
-
-  .nav.nav-mobile-open .nav-links a{
-    width: 100%;
-    padding: .75rem .9rem;
-    border-radius: 1rem;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.10);
-  }
-
-  .nav.nav-mobile-open .nav-links a:hover{
-    border-color: rgba(213,165,82,0.45);
-  }
-}
-
-
-
-
