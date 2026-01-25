@@ -2709,6 +2709,74 @@ body.nav-open{
     border-color: rgba(213,165,82,0.35);
   }
 }
+/* =========================
+   NAV MOBILE FIXED (drawer)
+   ========================= */
+
+#navBackdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 60;
+}
+#navBackdrop.is-active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.nav-open{
+  overflow: hidden;
+}
+
+/* Drawer panel */
+@media (max-width:960px){
+
+  .nav.nav-mobile-open{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(86vw, 360px);
+
+    background: rgba(15,23,42,0.97);
+    border-left: 1px solid rgba(255,255,255,0.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.4rem;
+    gap: 1.2rem;
+
+    z-index: 70;
+    box-shadow: -20px 0 80px rgba(0,0,0,0.75);
+  }
+
+  /* Show links properly */
+  .nav.nav-mobile-open .nav-links,
+  .nav.nav-mobile-open .nav-cta{
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav.nav-mobile-open .nav-links a{
+    width: 100%;
+    padding: .75rem .9rem;
+    border-radius: 1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+
+  .nav.nav-mobile-open .nav-links a:hover{
+    border-color: rgba(213,165,82,0.45);
+  }
+}
+
 
 
 
