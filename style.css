@@ -3002,6 +3002,57 @@ body.nav-open{ overflow: hidden; }
     transform: none !important; /* enlève le zoom (scale 1.03) sur PC */
   }
 }
+/* =========================================================
+   DESKTOP : réduire les gros blocs image (index + club)
+   sans toucher tablette/téléphone
+   ========================================================= */
+@media (min-width: 1024px){
+
+  /* 1) Présentation : grille plus équilibrée */
+  .present-grid{
+    grid-template-columns: 1fr 520px !important; /* texte + média */
+    align-items: center;
+    gap: 1.6rem !important;
+  }
+
+  /* 2) Bloc média : hauteur contrôlée (fini le pavé géant) */
+  .present-media{
+    min-height: 0 !important;
+    height: 320px !important;      /* ajuste 280–360 selon ton goût */
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  /* 3) Image : on évite le zoom/crop trop agressif */
+  .present-media img{
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    transform: none !important;     /* enlève le scale/zoom desktop */
+  }
+
+  /* 4) Cas spécial : l'image "logo" trop massive sur l'index */
+  /* (tu as une image logo dans .present-media : on la recadre mieux) */
+  .present-media img[src*="logo"],
+  .present-media img[alt*="Logo"],
+  .present-media img[alt*="logo"]{
+    object-fit: contain;            /* logo = ne pas couper */
+    object-position: center;
+    padding: 18px;                  /* respiration premium */
+    background: rgba(0,0,0,0.20);   /* fond discret */
+  }
+
+  /* 5) Titres : un poil moins énormes sur desktop pour laisser respirer */
+  .hero h1{ font-size: clamp(2rem, 3.2vw, 3.1rem) !important; }
+}
+
+/* Bonus : écrans très larges */
+@media (min-width: 1400px){
+  .present-grid{ grid-template-columns: 1fr 560px !important; }
+  .present-media{ height: 340px !important; }
+}
+
 
 
 
