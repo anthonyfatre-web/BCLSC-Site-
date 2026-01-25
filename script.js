@@ -13,18 +13,67 @@
   window.addEventListener("scroll", onScroll);
   onScroll();
 
-  // Burger menu
+    // Burger menu (mobile friendly + overlay + close on link)
   const nav = document.getElementById("nav");
   const navToggle = document.getElementById("navToggle");
+
+  // Backdrop (overlay)
+  let backdrop = document.getElementById("navBackdrop");
+  if (!backdrop) {
+    backdrop = document.createElement("div");
+    backdrop.id = "navBackdrop";
+    document.body.appendChild(backdrop);
+  }
+
+  const closeNav = () => {
+    if (!nav) return;
+    nav.classList.remove("nav-mobile-open");
+    document.body.classList.remove("nav-open");
+    backdrop.classList.remove("is-active");
+    navToggle?.setAttribute("aria-expanded", "false");
+  };
+
+  const openNav = () => {
+    if (!nav) return;
+    nav.classList.add("nav-mobile-open");
+    document.body.classList.add("nav-open");
+    backdrop.classList.add("is-active");
+    navToggle?.setAttribute("aria-expanded", "true");
+
+    // Focus first link for accessibility
+    const firstLink = nav.querySelector(".nav-links a");
+    firstLink?.focus?.();
+  };
+
   if (nav && navToggle) {
+    navToggle.setAttribute("aria-expanded", "false");
+
     navToggle.addEventListener("click", (e) => {
+      e.preventDefault();
       e.stopPropagation();
-      nav.classList.toggle("nav-mobile-open");
+      const isOpen = nav.classList.contains("nav-mobile-open");
+      isOpen ? closeNav() : openNav();
     });
-    document.addEventListener("click", (e) => {
-      if (!nav.contains(e.target)) nav.classList.remove("nav-mobile-open");
+
+    // Close on backdrop click
+    backdrop.addEventListener("click", closeNav);
+
+    // Close when clicking a menu link
+    nav.querySelectorAll(".nav-links a").forEach((a) => {
+      a.addEventListener("click", () => closeNav());
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNav();
+    });
+
+    // If resizing to desktop, ensure closed
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 960) closeNav();
     });
   }
+
 
   // Splash
   const splash = document.getElementById("splash");
@@ -521,3 +570,4 @@ reelModal?.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeReel();
 });
+
