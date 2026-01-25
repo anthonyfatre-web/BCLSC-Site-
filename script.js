@@ -570,4 +570,35 @@ reelModal?.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeReel();
 });
+<script>
+  // Force Instagram à (re)rendre les embeds (mobile / tabs / contenu dynamique)
+  function processInstagramEmbeds(){
+    try {
+      if (window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process) {
+        window.instgrm.Embeds.process();
+      }
+    } catch(e){}
+  }
+
+  // 1) au chargement
+  window.addEventListener("load", () => {
+    setTimeout(processInstagramEmbeds, 350);
+    setTimeout(processInstagramEmbeds, 1200);
+  });
+
+  // 2) au changement d’orientation / resize (mobile)
+  window.addEventListener("resize", () => {
+    clearTimeout(window.__igResizeT);
+    window.__igResizeT = setTimeout(processInstagramEmbeds, 300);
+  });
+
+  // 3) si tu as des onglets sur Médias (Photos/Vidéos/Instagram)
+  document.querySelectorAll(".media-tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setTimeout(processInstagramEmbeds, 250);
+      setTimeout(processInstagramEmbeds, 900);
+    });
+  });
+</script>
+
 
