@@ -146,56 +146,48 @@
     </div>
   </section>
 
-  <!-- VIDEOS : Instagram visible dans les cartes -->
+  <!-- VIDEOS : liens Instagram (no embed / mobile-safe) -->
   <section class="section panel" id="videos" data-section="videos">
     <div class="container">
       <div class="section-header">
         <p class="kicker">Réseaux</p>
         <h2 class="title">Vidéos (Instagram)</h2>
-        <p class="subtitle">Les Reels sont affichés directement sur la page (contenu public).</p>
+        <p class="subtitle">Ouverture directe sur Instagram (fiable sur mobile).</p>
       </div>
 
-      <div class="insta-video-grid-compact">
-        <!-- ✅ VIDEO 1 -->
-        <article class="card insta-video-card" data-tag="club" data-title="Qui t'a donné envie de jouer au basket ">
-          <div class="insta-embed insta-embed--compact">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/reel/DQL0DXsjDM2/?igsh=NWEyYnVjbGE1NDAw"
-              data-instgrm-version="14"
-              style="background:#fff; border:0; margin:0; padding:0;">
-            </blockquote>
+      <div class="ig-grid">
+        <!-- Reel 1 -->
+        <a class="ig-card"
+           href="https://www.instagram.com/reel/DQL0DXsjDM2/?igsh=NWEyYnVjbGE1NDAw"
+           target="_blank" rel="noopener"
+           data-tag="club" data-title="Qui t'a donné envie de jouer au basket part 1">
+          <div class="ig-card-top">
+            <span class="ig-chip">CLUB</span>
+            <span class="ig-pill">Reel</span>
           </div>
+          <h3 class="ig-title">Qui t’a donné envie de jouer au basket — Part 1</h3>
+          <p class="ig-meta">Ouvrir sur Instagram</p>
+          <div class="ig-cta">Regarder</div>
+        </a>
 
-          <div class="insta-video-meta">
-            <span class="reel-pill">Club</span>
-            <h3>Qui t'a donné envie de jouer au basket "Part1"</h3>
-            <p class="muted" style="margin:.35rem 0 0;">Reel Instagram</p>
+        <!-- Reel 2 -->
+        <a class="ig-card"
+           href="https://www.instagram.com/reel/DP5qpbVDN98/?igsh=YWwzYmR4Ym15YnJ2"
+           target="_blank" rel="noopener"
+           data-tag="club" data-title="Qui t'a donné envie de jouer au basket part 2">
+          <div class="ig-card-top">
+            <span class="ig-chip">CLUB</span>
+            <span class="ig-pill">Reel</span>
           </div>
-        </article>
-
-        <!-- ✅ VIDEO 2 -->
-        <article class="card insta-video-card" data-tag="match" data-title="Qui t'a donné envie de jouer au basket">
-          <div class="insta-embed insta-embed--compact">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/reel/DP5qpbVDN98/?igsh=YWwzYmR4Ym15YnJ2"
-              data-instgrm-version="14"
-              style="background:#fff; border:0; margin:0; padding:0;">
-            </blockquote>
-          </div>
-
-          <div class="insta-video-meta">
-            <span class="reel-pill">Club</span>
-            <h3>Qui t'a donné envie de jouer au basket "Part 2"</h3>
-            <p class="muted" style="margin:.35rem 0 0;">Reel Instagram</p>
-          </div>
-        </article>
-
-        <!-- ✅ Duplique autant que tu veux avec tes liens reels -->
+          <h3 class="ig-title">Qui t’a donné envie de jouer au basket — Part 2</h3>
+          <p class="ig-meta">Ouvrir sur Instagram</p>
+          <div class="ig-cta">Regarder</div>
+        </a>
       </div>
 
       <div class="card-sub" style="margin-top:1rem;">
         <p class="muted" style="margin:0;">
-          Si un bloqueur anti-tracking empêche la lecture, utilise le bouton “Instagram du club” en haut de page.
+          Astuce : si Instagram propose l’application, c’est normal sur mobile. Les liens restent la solution la plus fiable.
         </p>
       </div>
     </div>
@@ -205,12 +197,9 @@
 
 <footer class="site-footer">
   <div class="container">
-    © <span id="year"></span> Basket Club Lay-Saint-Christophe – Les Téméraires 🦁
-  </div>
-</footer>
-  <!-- Bandeau sponsors (défilement) -->
-  <div class="footer-ticker" aria-label="Sponsors">
-    <div class="container">
+
+    <!-- Bandeau sponsors (défilement) -->
+    <div class="footer-ticker" aria-label="Sponsors">
       <div class="footer-ticker-track">
         <span class="footer-thanks">Merci</span>
         <span class="footer-sep">•</span>
@@ -233,8 +222,12 @@
         <a class="footer-sponsor" href="https://instagram.com/" target="_blank" rel="noopener">Sponsor 3</a>
       </div>
     </div>
-  </div>
 
+    <div style="padding-top: 1rem;">
+      © <span id="year"></span> Basket Club Lay-Saint-Christophe – Les Téméraires 🦁
+    </div>
+  </div>
+</footer>
 
 <!-- Lightbox Photos -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -242,39 +235,6 @@
   <img class="lightbox-img" id="lightboxImg" alt="" />
   <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
-
-<!-- Instagram embed (1 seule fois) -->
-<script async src="https://www.instagram.com/embed.js"></script>
-<script>
-  function processInstagramEmbeds(){
-    try{
-      if (window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process){
-        window.instgrm.Embeds.process();
-      }
-    }catch(e){}
-  }
-
-  // chargement + double pass
-  window.addEventListener("load", () => {
-    setTimeout(processInstagramEmbeds, 350);
-    setTimeout(processInstagramEmbeds, 1200);
-  });
-
-  // resize/orientation change
-  window.addEventListener("resize", () => {
-    clearTimeout(window.__igResizeT);
-    window.__igResizeT = setTimeout(processInstagramEmbeds, 300);
-  });
-
-  // si tabs (Médias)
-  document.querySelectorAll(".media-tab").forEach(btn => {
-    btn.addEventListener("click", () => {
-      setTimeout(processInstagramEmbeds, 250);
-      setTimeout(processInstagramEmbeds, 900);
-    });
-  });
-</script>
-
 
 <script>
   // Year
@@ -314,8 +274,8 @@
       it.style.display = (okTag && okQ) ? "" : "none";
     });
 
-    // Videos (Instagram cards)
-    document.querySelectorAll(".insta-video-card").forEach(it => {
+    // Videos (liens Instagram)
+    document.querySelectorAll(".ig-card").forEach(it => {
       const title = (it.dataset.title || "").toLowerCase();
       const t = it.dataset.tag || "all";
       const okTag = (tag === "all") || (t === tag);
@@ -352,13 +312,6 @@
   lb.addEventListener("click", (e) => { if(e.target === lb) closeLB(); });
   document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeLB(); });
 
-  // ===== Force process Instagram embeds (utile si certains embeds ne s'affichent pas) =====
-  setTimeout(() => {
-    if (window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process) {
-      window.instgrm.Embeds.process();
-    }
-  }, 400);
-
   // ===== Ticker match (réutilise le Worker) =====
   const TEAM_ID = "200000005158393";
   const WORKER_URL = "https://bclc-ffbb.anthonyfatre.workers.dev";
@@ -374,7 +327,12 @@
     try {
       const res = await fetch(`${WORKER_URL}?team=${encodeURIComponent(TEAM_ID)}`, { cache: "no-store" });
       if (!res.ok) return;
-      const data = await res.json();
+
+      const contentType = (res.headers.get("content-type") || "").toLowerCase();
+      const raw = await res.text();
+      if (!contentType.includes("application/json")) return;
+
+      const data = JSON.parse(raw);
       if (!data || data.ok !== true || !data.nextMatch) return;
 
       const m = data.nextMatch;
@@ -394,4 +352,3 @@
 
 </body>
 </html>
-
