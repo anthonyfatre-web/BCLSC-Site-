@@ -600,5 +600,75 @@ document.addEventListener("keydown", (e) => {
     });
   });
 </script>
+// ===== Intro / Splash : mobile-safe =====
+(function () {
+  const splash = document.querySelector(".splash");
+  if (!splash) return;
+
+  const splashUI = splash.querySelector(".splash-ui");
+  const startBtn = splash.querySelector(".splash-btn button, .splash-btn a, #startIntro, #startBtn");
+  const skipBtn = splash.querySelector(".splash-skip");
+  const audio = document.querySelector("audio"); // si tu as un audio d'intro
+  const isMobile = window.matchMedia("(max-width: 960px)").matches;
+
+  const hideSplash = () => {
+    splash.classList.add("splash-hide");
+    setTimeout(() => {
+      splash.classList.add("hidden");
+    }, 650);
+  };
+
+  // Affiche l'UI même si canvas/audio bug
+  requestAnimationFrame(() => {
+    splashUI?.classList.add("is-visible");
+  });
+
+  // 1) Le bouton lance l'expérience (et tente audio si possible)
+  const start = async () => {
+    try {
+      // Sur mobile, on ne bloque JAMAIS l'accès si l'audio est refusé
+      if (audio) {
+        audio.muted = false;
+        const p = audio.play();
+        if (p && typeof p.then === "function") {
+          await p.catch(() => {}); // ignore autoplay errors
+        }
+      }
+    } finally {
+      hideSplash();
+    }
+  };
+
+  // 2) Click Start
+  if (startBtn) {
+    startBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      start();
+    });
+  }
+
+  // 3) Skip
+  if (skipBtn) {
+    skipBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      hideSplash();
+    });
+  }
+
+  // 4) IMPORTANT mobile : un tap n'importe où lance (UX)
+  if (isMobile) {
+    splash.addEventListener("click", (e) => {
+      // évite double déclenchement si clique sur boutons
+      if (e.target.closest(".splash-btn, .splash-skip")) return;
+      start();
+    }, { once: true });
+  }
+
+  // 5) Failsafe : si la splash reste > 5s, on ferme
+  setTimeout(() => {
+    if (!splash.classList.contains("hidden")) hideSplash();
+  }, 5000);
+})();
+
 
 
