@@ -2640,3 +2640,75 @@ body.nav-open{ overflow: hidden; }
     align-items: stretch;
   }
 }
+/* =========================
+   FIX MENU MOBILE (ANDROID SAFE)
+   À coller TOUT EN BAS du style.css
+   ========================= */
+
+#navBackdrop{
+  z-index: 9000 !important;
+}
+
+@media (max-width:960px){
+
+  /* On garde le header au-dessus */
+  .site-header{ z-index: 9200 !important; }
+
+  /* Panneau du menu = .nav-links en position FIXED */
+  .nav .nav-links{
+    display: none !important;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(86vw, 360px);
+
+    padding: 1.2rem;
+    padding-top: 4.5rem; /* laisse la place au header/burger */
+    background: rgba(15,23,42,0.98);
+    border-left: 1px solid rgba(255,255,255,0.12);
+    box-shadow: -20px 0 80px rgba(0,0,0,0.75);
+
+    flex-direction: column;
+    gap: .8rem;
+
+    z-index: 9100 !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Quand ouvert */
+  .nav.nav-mobile-open .nav-links{
+    display: flex !important;
+  }
+
+  .nav.nav-mobile-open .nav-links a{
+    width: 100%;
+    padding: .85rem 1rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+
+  /* CTA en bas du panneau */
+  .nav .nav-cta{
+    display: none !important;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: min(86vw, 360px);
+
+    padding: 1rem 1.2rem 1.2rem;
+    background: linear-gradient(to top, rgba(15,23,42,0.98), rgba(15,23,42,0));
+    z-index: 9101 !important;
+  }
+
+  .nav.nav-mobile-open .nav-cta{
+    display: flex !important;
+    flex-direction: column;
+    gap: .8rem;
+  }
+}
+
