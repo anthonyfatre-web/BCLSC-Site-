@@ -369,6 +369,36 @@
 
 <!-- Instagram embed -->
 <script async src="https://www.instagram.com/embed.js"></script>
+<script>
+  function processInstagramEmbeds(){
+    try{
+      if (window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process){
+        window.instgrm.Embeds.process();
+      }
+    }catch(e){}
+  }
+
+  // chargement + double pass
+  window.addEventListener("load", () => {
+    setTimeout(processInstagramEmbeds, 350);
+    setTimeout(processInstagramEmbeds, 1200);
+  });
+
+  // resize/orientation change
+  window.addEventListener("resize", () => {
+    clearTimeout(window.__igResizeT);
+    window.__igResizeT = setTimeout(processInstagramEmbeds, 300);
+  });
+
+  // si tabs (Médias)
+  document.querySelectorAll(".media-tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setTimeout(processInstagramEmbeds, 250);
+      setTimeout(processInstagramEmbeds, 900);
+    });
+  });
+</script>
+
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -415,3 +445,4 @@
 
 </body>
 </html>
+
