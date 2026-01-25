@@ -2988,6 +2988,21 @@ body.nav-open{ overflow: hidden; }
   .timeline-content{ padding: 1rem; border-radius: 16px; }
   .timeline-title{ font-size: 1.15rem; }
 }
+/* =========================
+   PRESENT-MEDIA : réduire sur PC uniquement
+   ========================= */
+@media (min-width: 980px){
+  .present-media{
+    min-height: 0 !important;
+    max-height: 240px;          /* ajuste si tu veux 220/260 */
+    aspect-ratio: 16 / 10;      /* garde un rendu premium */
+  }
+  .present-media img{
+    height: 100% !important;
+    transform: none !important; /* enlève le zoom (scale 1.03) sur PC */
+  }
+}
+
 
 
 
