@@ -2597,4 +2597,45 @@ body.nav-open{
     gap: .75rem;
   }
 }
+/* ===== Instagram embeds: fix mobile ===== */
+.ig-embed,
+.insta-embed,
+.video-embed.insta-embed {
+  width: 100%;
+  overflow: visible !important;          /* IMPORTANT : évite la coupe */
+}
+
+/* Instagram injecte un blockquote + iframe interne */
+.instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Le wrapper ne doit pas bloquer la hauteur */
+.ig-embed,
+.insta-embed {
+  min-height: 420px;                      /* assure une zone visible */
+  border-radius: 14px;
+}
+
+@media (max-width: 900px){
+  .ig-embed,
+  .insta-embed {
+    min-height: 520px;                    /* reels = plus haut sur mobile */
+  }
+}
+
+/* Optionnel : évite que des cards coupent l’embed */
+.sponsor-card,
+.video-card,
+.insta-card {
+  overflow: visible;
+}
+
 
