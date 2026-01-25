@@ -7,14 +7,14 @@
   <meta name="description" content="Contactez le Basket Club Lay-Saint-Christophe : essai, inscription, partenariat/sponsoring, informations." />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
-
 </head>
 
 <body>
+
   <!-- HEADER -->
-  <header class="site-header">
+  <header class="site-header" id="header">
     <div class="container">
-      <nav class="nav">
+      <nav class="nav" id="nav">
         <div class="nav-left">
           <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">
             <img src="images/logo3.png" alt="Logo Basket Club Lay-Saint-Christophe" />
@@ -38,40 +38,41 @@
 
         <div class="nav-cta">
           <a href="contact.html" class="btn-outline">Nous rejoindre</a>
-          <a href="contact.html" class="btn-primary">Essai gratuit</a>
+          <a href="#formulaire" class="btn-primary">Essai gratuit</a>
         </div>
 
-        <button class="nav-toggle" aria-label="Ouvrir le menu">
+        <button class="nav-toggle" aria-label="Ouvrir le menu mobile" type="button" id="navToggle">
           <span></span><span></span><span></span>
         </button>
       </nav>
     </div>
   </header>
-  
-  <div class="ticker" id="matchTicker" aria-live="polite">
-  <div class="ticker-track">
-    <span class="ticker-item">Chargement du prochain match…</span>
-  </div>
-</div>
 
+  <!-- Bandeau défilant "prochain match" -->
+  <div class="ticker" id="matchTicker" aria-live="polite">
+    <div class="ticker-track">
+      <span class="ticker-item">Chargement du prochain match…</span>
+      <span class="ticker-item">Chargement du prochain match…</span>
+    </div>
+  </div>
 
   <main>
     <!-- HERO / INTRO -->
     <section class="section" style="padding-top: 3rem;">
       <div class="container">
         <div class="section-header">
-          <p class="section-kicker">Contact</p>
-          <h1 class="section-title">Nous contacter</h1>
-          <p class="section-subtitle">
+          <p class="kicker">Contact</p>
+          <h1 class="title">Nous contacter</h1>
+          <p class="subtitle">
             Demande d’essai, inscription, partenariats, questions… Écris-nous et on te répond rapidement.
           </p>
         </div>
 
         <div class="card" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
           <div>
-            <p class="card-kicker">Essai</p>
-            <h2 class="card-title" style="margin-bottom:0.25rem;">Tu veux tester un entraînement ?</h2>
-            <p class="card-text">Indique ton âge/catégorie, ton niveau et tes disponibilités.</p>
+            <p class="kicker" style="margin:0 0 .35rem;">Essai</p>
+            <h2 style="margin:0 0 .25rem;">Tu veux tester un entraînement ?</h2>
+            <p class="muted" style="margin:0;">Indique ton âge/catégorie, ton niveau et tes disponibilités.</p>
           </div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
             <a href="#formulaire" class="btn-primary">Demander un essai</a>
@@ -87,17 +88,13 @@
         <div class="contact-grid">
           <!-- FORM -->
           <div class="form-card">
-            <h2 class="card-title" style="margin-bottom:0.75rem;">Formulaire</h2>
-            <p class="card-text" style="margin-bottom:1rem;">
-              Remplis ce formulaire. Si tu n’as pas de solution d’envoi (Formspree/EmailJS), le bouton ouvrira ton application email.
+            <h2 class="title" style="margin-bottom:0.75rem;">Formulaire</h2>
+            <p class="muted" style="margin-bottom:1rem;">
+              Pour l’instant, le bouton ouvre ton application email (sans système d’envoi automatique).
+              Si tu veux, on branchera ensuite Formspree.
             </p>
 
-            <!--
-              IMPORTANT :
-              Sans backend, un formulaire HTML ne peut pas envoyer d'email "tout seul".
-              Solution simple : utiliser Formspree (recommandé) ou EmailJS.
-              En attendant, on utilise mailto: pour ouvrir l'appli mail.
-            -->
+            <!-- mailto = ouvre l'app email -->
             <form action="mailto:contact@bclayst.fr" method="post" enctype="text/plain">
               <div class="form-row">
                 <div class="form-field">
@@ -133,21 +130,20 @@
               <div class="form-field">
                 <label class="form-label" for="message">Message</label>
                 <textarea class="form-textarea" id="message" name="Message" placeholder="Écris ton message ici…" required></textarea>
-                <p class="helper-text">Pense à préciser ta catégorie, ton niveau et tes disponibilités si tu demandes un essai.</p>
+                <p class="helper-text">Pense à préciser catégorie/niveau/disponibilités si tu demandes un essai.</p>
               </div>
 
               <button type="submit" class="btn-primary">Envoyer</button>
 
               <p class="helper-text" style="margin-top:0.75rem;">
-                En cliquant sur “Envoyer”, ton application email s’ouvrira avec le contenu du message.
-                Si tu veux un envoi “pro” automatique, dis-moi et je te branche Formspree en 2 minutes.
+                Si rien ne se passe au clic, c’est que ton téléphone/PC n’a pas d’app email configurée.
               </p>
             </form>
           </div>
 
           <!-- INFOS -->
           <aside class="contact-info-card">
-            <h2 class="card-title">Coordonnées</h2>
+            <h2 class="title">Coordonnées</h2>
             <ul class="info-list">
               <li><strong>Club :</strong> Basket Club Lay-Saint-Christophe</li>
               <li><strong>Email :</strong> <a href="mailto:contact@bclayst.fr">contact@bclayst.fr</a></li>
@@ -155,16 +151,16 @@
               <li><strong>Lieu :</strong><br />Gymnase du Moulin Noir<br />54690 Lay-Saint-Christophe</li>
             </ul>
 
-            <h3 class="card-title" style="margin-top:1.25rem;">Réseaux sociaux</h3>
+            <h3 class="title" style="margin-top:1.25rem;">Réseaux sociaux</h3>
             <ul class="info-list">
               <li><strong>Instagram :</strong> <a href="https://www.instagram.com/TON_COMPTE_CLUB/" target="_blank" rel="noopener">@ton_compte_club</a></li>
               <li><strong>Facebook :</strong> <a href="https://www.facebook.com/TON_CLUB" target="_blank" rel="noopener">Page Facebook</a></li>
             </ul>
 
             <div class="card" style="margin-top:1.25rem;">
-              <p class="card-kicker">Infos</p>
-              <p class="card-text">
-                Pour une demande de partenariat, indique ton activité, le type de visibilité souhaitée
+              <p class="kicker">Infos</p>
+              <p class="muted" style="margin:.5rem 0 0;">
+                Pour un partenariat, indique ton activité, le type de visibilité souhaitée
                 (maillots, salle, réseaux, événements) et un contact.
               </p>
             </div>
@@ -173,17 +169,16 @@
       </div>
     </section>
 
-    <!-- MAP (OPTION) -->
+    <!-- MAP -->
     <section class="section" style="padding-top: 1rem;">
       <div class="container">
         <div class="section-header" style="margin-bottom:1.25rem;">
-          <p class="section-kicker">Accès</p>
-          <h2 class="section-title">Nous trouver</h2>
-          <p class="section-subtitle">Tu peux intégrer une carte Google Maps ci-dessous.</p>
+          <p class="kicker">Accès</p>
+          <h2 class="title">Nous trouver</h2>
+          <p class="subtitle">Adresse : Gymnase du Moulin Noir, Lay-Saint-Christophe.</p>
         </div>
 
         <div class="card" style="padding:0; overflow:hidden;">
-          <!-- Remplace src par ton lien d'intégration Google Maps -->
           <iframe
             title="Carte – Gymnase du Moulin Noir"
             src="https://www.google.com/maps?q=Gymnase%20du%20Moulin%20Noir%20Lay-Saint-Christophe&output=embed"
@@ -201,40 +196,38 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-bottom">
+      <!-- Bandeau sponsors -->
+      <div class="footer-ticker" aria-label="Sponsors">
+        <div class="footer-ticker-track">
+          <span class="footer-thanks">Merci à nos sponsors</span>
+          <span class="footer-sep">•</span>
+          <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 1</a>
+          <span class="footer-sep">•</span>
+          <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 2</a>
+          <span class="footer-sep">•</span>
+          <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 3</a>
+          <span class="footer-sep">•</span>
+
+          <span class="footer-thanks">Merci à nos sponsors</span>
+          <span class="footer-sep">•</span>
+          <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 1</a>
+          <span class="footer-sep">•</span>
+          <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 2</a>
+          <span class="footer-sep">•</span>
+          <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 3</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="padding-top: 1rem;">
         <span>© <span id="year"></span> Basket Club Lay-Saint-Christophe</span>
         <span>Contact : <a href="mailto:contact@bclayst.fr">contact@bclayst.fr</a></span>
       </div>
     </div>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <script src="script.js"></script>
-	<div class="footer-ticker" aria-label="Sponsors">
-  <div class="footer-ticker-track">
-    <span class="footer-thanks">Merci à nos sponsors</span>
-    <span class="footer-sep">•</span>
-
-    <!-- Remplace/ajoute tes sponsors -->
-    <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 1</a>
-    <span class="footer-sep">•</span>
-    <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 2</a>
-    <span class="footer-sep">•</span>
-    <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 3</a>
-    <span class="footer-sep">•</span>
-
-    <!-- Duplique le contenu (simple) pour un défilement fluide si tu veux -->
-    <span class="footer-thanks">Merci à nos sponsors</span>
-    <span class="footer-sep">•</span>
-    <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 1</a>
-    <span class="footer-sep">•</span>
-    <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 2</a>
-    <span class="footer-sep">•</span>
-    <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 3</a>
-  </div>
-</div>
-
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
-
