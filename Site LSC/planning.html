@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Planning – Basket Club Lay-St-Christophe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Planning des entraînements et informations pratiques du Basket Club Lay-Saint-Christophe (Les Téméraires)." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header class="site-header" id="header">
+  <div class="container">
+    <nav class="nav" id="nav">
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">
+          <img src="images/logo3.png" alt="Logo Basket Club Lay-Saint-Christophe" />
+        </a>
+
+        <div class="nav-brand">
+          <span class="nav-brand-title">Basket Club Lay-St-Christophe</span>
+          <span class="nav-brand-subtitle">Les Téméraires</span>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="club.html">Le club</a>
+        <a href="equipes.html">Équipes</a>
+        <a href="planning.html" class="active">Planning</a>
+        <a href="medias.html">Médias</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="contact.html" class="btn-outline">Nous rejoindre</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu mobile" type="button" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Bandeau défilant (même style que équipes) -->
+<div class="ticker" id="matchTicker" aria-live="polite">
+  <div class="ticker-track">
+    <span class="ticker-item">Prochain match : chargement…</span>
+    <span class="ticker-item">Prochain match : chargement…</span>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Planning</h1>
+      <p>
+        Créneaux d’entraînement, infos salle et organisation du club.
+        Les horaires peuvent évoluer : pour un essai, contacte-nous et on te confirme le bon créneau.
+      </p>
+
+      <div class="cta">
+        <a class="btn-primary" href="contact.html">Demander un essai</a>
+        <a class="btn-outline" href="equipes.html">Voir l’équipe Séniors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFOS PRATIQUES (Premium cards) -->
+  <section class="section panel">
+    <div class="container">
+      <div class="section-header">
+        <p class="kicker">Infos pratiques</p>
+        <h2 class="title">Avant de venir</h2>
+        <p class="subtitle">Tout ce qu’il faut pour arriver prêt et profiter de la séance.</p>
+      </div>
+
+      <div class="planning-cards">
+        <article class="card planning-card">
+          <div class="planning-card-top">
+            <span class="planning-icon">📍</span>
+            <div>
+              <p class="planning-kicker">Lieu</p>
+              <h3 class="planning-title">Gymnase du Moulin Noir / Cosec Champigneulles</h3>
+            </div>
+          </div>
+          <p class="planning-text">
+            Lay-Saint-Christophe (54690). Champigneulles (54250). <br>Accès & contact sur la page <a href="contact.html">Contact</a>.
+          </p>
+        </article>
+
+        <article class="card planning-card">
+          <div class="planning-card-top">
+            <span class="planning-icon">🟡</span>
+            <div>
+              <p class="planning-kicker">Essai</p>
+              <h3 class="planning-title">Sur demande</h3>
+            </div>
+          </div>
+          <p class="planning-text">
+            Préviens-nous avant : on t’accueille, on te confirme le créneau et on te met dans les meilleures conditions.
+          </p>
+        </article>
+
+        <article class="card planning-card">
+          <div class="planning-card-top">
+            <span class="planning-icon">🎒</span>
+            <div>
+              <p class="planning-kicker">À prévoir</p>
+              <h3 class="planning-title">Tenue & matériel</h3>
+            </div>
+          </div>
+          <p class="planning-text">
+            Chaussures propres, tenue de sport, gourde. Ballons disponibles au club.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRENEAUX (Ultra premium) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="kicker">Créneaux</p>
+        <h2 class="title">Semaine type</h2>
+        <p class="subtitle">Planning modulable selon la saison et les disponibilités de salle.</p>
+      </div>
+
+      <!-- Blocs premium -->
+      <div class="ultra-grid">
+        <div class="card ultra-card ultra-card--next">
+          <div class="ultra-head">
+            <div class="ultra-head-left">
+              <p class="ultra-kicker">Séniors</p>
+              <h3 class="ultra-title">Entraînements DM3</h3>
+            </div>
+            <div class="ultra-head-right">
+              <span class="ultra-pill">Saison 2025–2026</span>
+            </div>
+          </div>
+
+          <div class="ultra-body">
+            <div class="planning-slot">
+              <div class="planning-slot-line">
+                <span class="planning-day">Mardi</span>
+                <span class="planning-time">20h00 – 22h00</span>
+              </div>
+              <div class="planning-slot-sub">Entraînement individuel - pré collectif • intensité progressive</div>
+            </div>
+
+            <div class="planning-slot" style="margin-top:.85rem;">
+              <div class="planning-slot-line">
+                <span class="planning-day">Jeudi</span>
+                <span class="planning-time">20h00 – 22h00</span>
+              </div>
+              <div class="planning-slot-sub">Jeu / tactique • situations & oppositions</div>
+            </div>
+
+            <div class="ultra-actions">
+              <a class="btn-primary" href="contact.html">Demander un essai</a>
+              <a class="btn-outline" href="equipes.html">Calendrier & résultats</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card ultra-card ultra-card--last">
+          <div class="ultra-head">
+            <div class="ultra-head-left">
+              <p class="ultra-kicker">Ouvertures</p>
+              <h3 class="ultra-title">Loisirs / Jeunes / Sport santé</h3>
+            </div>
+            <div class="ultra-head-right">
+              <span class="ultra-pill ultra-pill--ghost">À venir</span>
+            </div>
+          </div>
+
+          <div class="ultra-body">
+            <div class="planning-mini">
+              <div class="planning-mini-row">
+                <span class="planning-mini-tag">Loisirs</span>
+                <span class="muted">Vendredi, selon Planning des matchs</span>
+              </div>
+              <div class="planning-mini-row">
+                <span class="planning-mini-tag">Jeunes</span>
+                <span class="muted">Projet moyen terme</span>
+              </div>
+              <div class="planning-mini-row">
+                <span class="planning-mini-tag">Sport santé</span>
+                <span class="muted">Projet en construction</span>
+              </div>
+            </div>
+
+            <div class="ultra-actions">
+              <a class="btn-primary" href="contact.html">Je suis intéressé</a>
+              <a class="btn-outline" href="club.html">Découvrir le projet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calendrier compact (table) -->
+      <div class="card results-card" style="margin-top:1.2rem;">
+        <div class="results-head">
+          <h3 class="results-title">Tableau récapitulatif</h3>
+          <span class="muted">Mise à jour manuelle (horaires)</span>
+        </div>
+
+        <div class="table-wrap planning-table-wrap">
+          <table class="results-table planning-table">
+            <thead>
+              <tr>
+                <th>Jour</th>
+                <th>Horaire</th>
+                <th>Catégorie</th>
+                <th>Lieu</th>
+                <th>Info</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mardi</td>
+                <td>20h00 – 22h00</td>
+                <td>Séniors DM3</td>
+                <td>Gymnase du Moulin Noir</td>
+                <td>Travail individuel</td>
+              </tr>
+              <tr>
+                <td>Jeudi</td>
+                <td>20h00 – 22h00</td>
+                <td>Séniors DM3</td>
+                <td>Cosec de champigneulles</td>
+                <td>Jeu / tactique</td>
+              </tr>
+              <<tr>
+			    <td>Vendredi (selon planning matchs)</td>
+				<td>20h30 – 22h30</td>
+				<td>Loisirs</td>
+				<td>À confirmer</td>
+				<td>Selon inscriptions</td>
+			  </tr>
+
+              <tr>
+                <td>À définir</td>
+                <td>—</td>
+                <td>Jeunes / Minibasket</td>
+                <td>À planifier</td>
+                <td>En Projet</td>
+              </tr>
+              <tr>
+                <td>À définir</td>
+                <td>—</td>
+                <td>Sport santé / handisport</td>
+                <td>À planifier</td>
+                <td>En Projet</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-sub" style="margin-top:1rem;">
+          <p class="muted" style="margin:0;">
+            Pour éviter tout déplacement inutile, contacte-nous avant un essai : <a href="contact.html">page Contact</a>.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:1rem;">
+    <div class="container">
+      <div class="cta-wide card">
+        <div>
+          <p class="kicker" style="margin:0 0 .35rem;">Essai</p>
+          <h3 style="margin:0 0 .35rem;">Tu veux venir tester ?</h3>
+          <p class="muted" style="margin:0;">On te confirme le créneau et on t’accueille à la salle.</p>
+        </div>
+        <div class="cta-wide-right">
+          <a class="btn-primary" href="contact.html">Demander un essai</a>
+          <a class="btn-outline" href="equipes.html">Voir les matchs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Basket Club Lay-Saint-Christophe</span>
+      <span>Les Téméraires 🦁</span>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Ticker match (réutilise le Worker)
+    const TEAM_ID = "200000005158393";
+    const WORKER_URL = "https://bclc-ffbb.anthonyfatre.workers.dev";
+
+    const escapeHtml = (s) => String(s ?? "")
+      .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;").replaceAll("'","&#039;");
+
+    (async () => {
+      const el = document.getElementById("matchTicker");
+      if (!el) return;
+
+      try {
+        const res = await fetch(`${WORKER_URL}?team=${encodeURIComponent(TEAM_ID)}`, { cache: "no-store" });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!data || data.ok !== true || !data.nextMatch) return;
+
+        const m = data.nextMatch;
+        const text = `Prochain match • J${m.journee} • ${m.dateTime} • ${m.lieu} • vs ${m.adversaire} • Allez les Téméraires 🦁`;
+
+        el.innerHTML = `
+          <div class="ticker-track">
+            <span class="ticker-item">${escapeHtml(text)}</span>
+            <span class="ticker-item">${escapeHtml(text)}</span>
+            <span class="ticker-item">${escapeHtml(text)}</span>
+            <span class="ticker-item">${escapeHtml(text)}</span>
+          </div>
+        `;
+      } catch(e) {}
+    })();
+  </script>
+</footer>
+  <!-- Bandeau sponsors (défilement) -->
+  <div class="footer-ticker" aria-label="Sponsors">
+    <div class="container">
+      <div class="footer-ticker-track">
+        <span class="footer-thanks">Merci</span>
+        <span class="footer-sep">•</span>
+
+        <!-- 🔁 Remplace / ajoute tes sponsors -->
+        <a class="footer-sponsor" href="https://instagram.com/" target="_blank" rel="noopener">EcoCuisine Houdemont</a>
+        <span class="footer-sep">•</span>
+        <a class="footer-sponsor" href="https://instagram.com/" target="_blank" rel="noopener">Sponsor 2</a>
+        <span class="footer-sep">•</span>
+        <a class="footer-sponsor" href="https://instagram.com/" target="_blank" rel="noopener">Sponsor 3</a>
+
+        <!-- duplication (pour scroll fluide) -->
+        <span class="footer-sep">•</span>
+        <span class="footer-thanks">Merci</span>
+        <span class="footer-sep">•</span>
+        <a class="footer-sponsor" href="https://instagram.com/" target="_blank" rel="noopener">Sponsor 1</a>
+        <span class="footer-sep">•</span>
+        <a class="footer-sponsor" href="https://instagram.com/" target="_blank" rel="noopener">Sponsor 2</a>
+        <span class="footer-sep">•</span>
+        <a class="footer-sponsor" href="https://instagram.com/" target="_blank" rel="noopener">Sponsor 3</a>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
