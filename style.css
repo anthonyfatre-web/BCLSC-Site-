@@ -43,7 +43,26 @@ main, header, footer{position:relative; z-index:1}
 .site-header.is-scrolled{border-bottom-color:rgba(213,165,82,0.25)}
 .nav{display:flex;justify-content:space-between;align-items:center;height:4.5rem;gap:1rem}
 .nav-left{display:flex;align-items:center;gap:.9rem}
-.nav-logo img{max-height:82px;display:block}
+/* ===== Logo header : taille propre + stable ===== */
+.nav-logo{
+  display:flex;
+  align-items:center;
+  flex: 0 0 auto;
+}
+
+.nav-logo img{
+  height: 44px;        /* ajuste ici (40–52 selon ton goût) */
+  width: auto;
+  max-height: none;    /* important : évite le 82px */
+  display:block;
+  object-fit: contain;
+}
+
+/* Mobile : un poil plus petit pour laisser respirer */
+@media (max-width: 600px){
+  .nav-logo img{ height: 38px; }
+}
+
 .nav-brand{display:flex;flex-direction:column}
 .nav-brand-title{font-weight:850;font-size:1rem;text-transform:none}
 .nav-brand-subtitle{font-size:.86rem;color:var(--muted)}
@@ -3517,5 +3536,6 @@ body.nav-open{ overflow: hidden; }
   .contact-grid-clean{ grid-template-columns: 1fr; }
   .contact-row{ grid-template-columns: 1fr; }
 }
+
 
 
