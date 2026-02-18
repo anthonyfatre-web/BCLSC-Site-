@@ -51,7 +51,7 @@ main, header, footer{position:relative; z-index:1}
 }
 
 .nav-logo img{
-  height: 44px;        /* ajuste ici (40–52 selon ton goût) */
+  height: 40px;        /* ajuste ici (40–52 selon ton goût) */
   width: auto;
   max-height: none;    /* important : évite le 82px */
   display:block;
@@ -3536,6 +3536,7 @@ body.nav-open{ overflow: hidden; }
   .contact-grid-clean{ grid-template-columns: 1fr; }
   .contact-row{ grid-template-columns: 1fr; }
 }
+
 
 
 
