@@ -2,9 +2,41 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Basket Club Lay-St-Christophe – Le Club</title>
-  <meta name="description" content="Découvrez le Basket Club Lay-St-Christophe : histoire, valeurs, projet associatif, sport santé, loisirs et vie du club." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Le club | Basket Club Lay-Saint-Christophe (BCLSC) – Les Téméraires</title>
+  <meta name="description" content="Découvrez le Basket Club Lay-Saint-Christophe (BCLSC) : histoire, valeurs, frise chronologique et projet associatif (séniors, loisirs, jeunes, basket féminin, sport santé)." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Canonical (à remplacer par ton domaine quand il existe) -->
+  <link rel="canonical" href="https://votredomaine.fr/club.html" />
+
+  <!-- Open Graph / Social (à remplacer par ton domaine quand il existe) -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Basket Club Lay-Saint-Christophe" />
+  <meta property="og:title" content="Le club – Basket Club Lay-Saint-Christophe (BCLSC)" />
+  <meta property="og:description" content="Histoire, valeurs et projet du BCLSC : séniors, loisirs, jeunes, basket féminin et sport santé." />
+  <meta property="og:url" content="https://votredomaine.fr/club.html" />
+  <meta property="og:image" content="https://votredomaine.fr/images/og-bclsc.jpg" />
+
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <!-- Données structurées (optionnel, à garder) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsTeam",
+    "name": "Basket Club Lay-Saint-Christophe",
+    "alternateName": "BCLSC – Les Téméraires",
+    "sport": "Basketball",
+    "foundingDate": "2024-07",
+    "description": "Association de basket du Bassin de Pompey : séniors, loisirs, jeunes, basket féminin et sport santé.",
+    "areaServed": "Bassin de Pompey",
+    "url": "https://votredomaine.fr/club.html",
+    "logo": "https://votredomaine.fr/images/logo2.png"
+  }
+  </script>
 
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
@@ -47,24 +79,28 @@
   </div>
 </header>
 
-<div class="ticker" id="matchTicker" aria-live="polite">
-  <div class="ticker-track">
-    <span class="ticker-item">Chargement du prochain match…</span>
-  </div>
-</div>
-
-
 <main>
 
-  <!-- HERO CLUB -->
+  <!-- HERO CLUB (conserve le design, + logo pour l'identité) -->
   <section class="hero">
     <div class="container">
+
+      <img
+        src="images/logo2.png"
+        alt="Logo Basket Club Lay-Saint-Christophe"
+        width="220"
+        height="220"
+        loading="lazy"
+        style="width:min(170px,55vw); height:auto; margin:0 auto 1.05rem; display:block; filter: drop-shadow(0 16px 60px rgba(0,0,0,0.65));"
+      />
+
       <h1>Le club</h1>
       <p>
-        Une jeune association créée en 2024, ambitieuse et conviviale : une équipe sénior engagée en compétition
-        et de nombreux projets en préparation (section loisir mixte, sport santé, inclusion…).
-        Ici, on progresse ensemble, sur et en dehors du terrain.
+        Créé en <strong>juillet 2024</strong> par une bande de copains, le Basket Club Lay-Saint-Christophe porte une ambition simple :
+        <strong>faire vivre le basket près de chez nous</strong>, dans un esprit familial, exigeant et respectueux.
+        Séniors en compétition, ouverture loisirs, projets jeunes, basket féminin et sport santé : on construit un club moderne et accessible.
       </p>
+
       <div class="cta">
         <a href="contact.html" class="btn-primary">Demander un essai</a>
         <a href="planning.html" class="btn-outline">Voir les créneaux</a>
@@ -72,65 +108,115 @@
     </div>
   </section>
 
-  <!-- HISTOIRE / PRÉSENTATION -->
+  <!-- IDENTITÉ (style "Nos piliers" : lecture + pro sur mobile) -->
   <section class="section panel">
     <div class="container">
       <div class="section-header">
-        <p class="kicker">Qui sommes-nous ?</p>
+        <p class="kicker">Identité</p>
         <h2 class="title">Basket Club Lay-Saint-Christophe</h2>
-        <p class="subtitle">Un club passionné avec un esprit familial.</p>
+        <p class="subtitle">
+          Les Téméraires : un club construit autour de valeurs fortes et d’un projet qui grandit avec son territoire.
+        </p>
       </div>
 
-      <div class="present-grid">
-        <div class="card present-media">
-          <img src="images/image1.jpeg" alt="Photo du club - ambiance et terrain">
-        </div>
-
-        <div class="card">
-          <div class="present-content">
-            <h3>Un projet associatif construit autour des valeurs</h3>
-            <p>
-              Respect, partage, esprit d'équipe, passion sont nos priorités.
-              Notre objectif est de créer une ambiance positive, chaleureuse et exigeante,
-              qui permet à chacun de progresser, du loisir à la compétition.
-            </p>
-
-            <ul class="present-list">
-              <li><strong>Séniors</strong> : intensité, collectif, progression</li>
-              <li><strong>Développement</strong> : accueil jeunes & nouveaux joueurs</li>
-              <li><strong>Loisirs</strong> : basket plaisir, accessible et régulier</li>
-              <li><strong>Sport santé</strong> : reprise d’activité, bien-être, inclusion</li>
-              <li><strong>Vie de club</strong> : événements, bénévolat, esprit familial</li>
-            </ul>
-
-            <div class="present-actions">
-              <a href="equipes.html" class="btn-primary">Voir les équipes</a>
-              <a href="contact.html" class="btn-outline">Nous contacter</a>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon" aria-hidden="true">🦁</div>
+            <div>
+              <p class="feature-kicker">Notre histoire</p>
+              <h3 class="feature-title">Né en 2024, pour faire bouger le secteur</h3>
             </div>
           </div>
-        </div>
+          <p class="feature-text">
+            Le club est né d’une idée simple : créer une association sportive là où il manquait un vrai point de rendez-vous basket.
+            Depuis juillet 2024, nous développons un projet à taille humaine, avec une identité forte et une envie de rassembler.
+          </p>
+          <div class="feature-meta">
+            <span class="feature-chip">Depuis 2024</span>
+            <span class="feature-chip">Bassin de Pompey</span>
+            <span class="feature-chip">Les Téméraires</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon" aria-hidden="true">🤝</div>
+            <div>
+              <p class="feature-kicker">Nos valeurs</p>
+              <h3 class="feature-title">Respect, partage, inclusion</h3>
+            </div>
+          </div>
+          <p class="feature-text">
+            Le respect est non négociable : avant d’être des sportifs, nous sommes des êtres humains.
+            Nous cultivons le partage, l’esprit d’équipe et la bienveillance, pour que chacun progresse et prenne plaisir à jouer,
+            quel que soit son niveau ou son parcours.
+          </p>
+          <div class="feature-meta">
+            <span class="feature-chip">Respect</span>
+            <span class="feature-chip">Partage</span>
+            <span class="feature-chip">Inclusion</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon" aria-hidden="true">🌟</div>
+            <div>
+              <p class="feature-kicker">Nos piliers</p>
+              <h3 class="feature-title">Progresser, rassembler, durer</h3>
+            </div>
+          </div>
+          <p class="feature-text">
+            Nous voulons un club moderne : une exigence saine pour progresser, un esprit familial pour se dépasser ensemble,
+            et une accessibilité réelle (loisirs, sport santé, ouverture aux publics jeunes et au basket féminin).
+          </p>
+          <div class="feature-meta">
+            <span class="feature-chip">Performance</span>
+            <span class="feature-chip">Convivialité</span>
+            <span class="feature-chip">Accessibilité</span>
+          </div>
+
+          <div style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+            <a href="equipes.html" class="btn-outline">Voir les équipes</a>
+            <a href="contact.html" class="btn-primary">Nous contacter</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRISE CHRONOLOGIQUE (conservée) -->
+  <section class="section panel">
+    <div class="container">
+      <div class="section-header">
+        <p class="kicker">Notre histoire</p>
+        <h2 class="title">Frise chronologique</h2>
+        <p class="subtitle">Les grandes étapes de la construction du club, et la suite du projet.</p>
       </div>
 
-      <!-- Timeline simple -->
       <div class="club-timeline">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <p class="timeline-year">2024</p>
             <h3 class="timeline-title">Création de l’association</h3>
-            <p class="timeline-text">Naissance du projet : Créer par une équipe souhaitant apporter un nouveau souffle dans le secteur du monde associatif,
-			structurer un club moderne et fédérateur à Lay-St-Christophe.</p>
+            <p class="timeline-text">
+              Naissance du projet : une bande de passionnés décide de créer un club à Lay-Saint-Christophe pour dynamiser la vie sportive locale,
+              structurer une association moderne et fédératrice, et porter une identité forte.
+            </p>
           </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <p class="timeline-year">2025-2026</p>
-            <h3 class="timeline-title">Développement & projets</h3>
+            <p class="timeline-year">2025 – 2026</p>
+            <h3 class="timeline-title">Structuration & développement</h3>
             <p class="timeline-text">
-              Consolidation de l’équipe sénior en compétition et préparation de nouveaux axes :
-              création d'une section loisirs mixte, engagement en championnat de notre équipe sénior, recherche de sponsors.
+              Engagement d'une équipe séniors en compétition, montée en puissance du projet club, lancement de nouveaux axes :
+              <strong>ouverture loisirs</strong>, <strong>sport santé</strong>, dynamique inclusive, signature de notre premier sponsor MERCI EcoCuisine Houdemont !
+			  Recherche de nouveaux partenaires/sponsors.
             </p>
           </div>
         </div>
@@ -141,22 +227,24 @@
             <p class="timeline-year">À venir</p>
             <h3 class="timeline-title">Grandir ensemble</h3>
             <p class="timeline-text">
-              Développer l’accueil de nouveaux licenciés, structurer la formation, renforcer l’animation autour du club, sport santé et bien d'autres projets à venir.
+              Développer l’accueil de nouveaux licenciés, structurer la formation, renforcer l’animation autour du club,
+              et construire des parcours : jeunes, basket féminin, loisirs et sport santé.
             </p>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- NOS PILIERS (cartes lisibles) -->
+  <!-- NOTRE PROJET (plus clair + plus "blocs") -->
   <section class="section panel">
     <div class="container">
       <div class="section-header">
-        <p class="kicker">Nos piliers</p>
-        <h2 class="title">Un club moderne et fédérateur</h2>
-        <p class="subtitle">Une identité forte, une passion commune et un projet structuré pour durer.</p>
+        <p class="kicker">Notre projet</p>
+        <h2 class="title">Ce que nous souhaitons développer</h2>
+        <p class="subtitle">
+          Des parcours, des créneaux et des temps forts pour faire vivre le club, avec un objectif : un basket pour tous.
+        </p>
       </div>
 
       <div class="feature-grid">
@@ -164,108 +252,122 @@
           <div class="feature-top">
             <div class="feature-icon" aria-hidden="true">🏆</div>
             <div>
-              <p class="feature-kicker">Performance</p>
-              <h3 class="feature-title">Progresser ensemble</h3>
+              <p class="feature-kicker">Compétition</p>
+              <h3 class="feature-title">Séniors</h3>
             </div>
           </div>
           <p class="feature-text">
-            Une exigence saine, des objectifs clairs et une culture du collectif.
-            Chaque entraînement doit faire grandir le joueur et l’équipe.
+            Une équipe séniors engagée en compétition, avec une culture du travail et du collectif.
+            Objectif : progresser, performer, et représenter le club avec fierté.
           </p>
           <div class="feature-meta">
             <span class="feature-chip">Collectif</span>
-            <span class="feature-chip">Progression</span>
             <span class="feature-chip">Engagement</span>
+            <span class="feature-chip">Progression</span>
           </div>
         </article>
 
         <article class="feature-card">
           <div class="feature-top">
-            <div class="feature-icon" aria-hidden="true">🤝</div>
+            <div class="feature-icon" aria-hidden="true">🎉</div>
             <div>
-              <p class="feature-kicker">Convivialité</p>
-              <h3 class="feature-title">Esprit familial</h3>
+              <p class="feature-kicker">Basket plaisir</p>
+              <h3 class="feature-title">Section Loisirs</h3>
             </div>
           </div>
           <p class="feature-text">
-            Un club, c’est un lieu de vie : événements, moments forts, bénévolat,
-            respect et entraide. On joue pour le maillot, et pour les autres.
+            Pour débuter, reprendre ou simplement jouer : une pratique conviviale, sans pression, ouverte et régulière.
+            L’objectif : se retrouver, transpirer, progresser, et passer un bon moment.
           </p>
           <div class="feature-meta">
-            <span class="feature-chip">Respect</span>
-            <span class="feature-chip">Partage</span>
+            <span class="feature-chip">Débutants OK</span>
+            <span class="feature-chip">Mixte</span>
+            <span class="feature-chip">Vendredi</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon" aria-hidden="true">🧡</div>
+            <div>
+              <p class="feature-kicker">Bien-être</p>
+              <h3 class="feature-title">Sport santé</h3>
+            </div>
+          </div>
+          <p class="feature-text">
+            Reprise d’activité progressive, remise en mouvement, confiance : un cadre rassurant, adapté,
+            et respectueux du rythme de chacun, avec l’objectif de se sentir mieux au quotidien.
+          </p>
+          <div class="feature-meta">
+            <span class="feature-chip">Reprise</span>
+            <span class="feature-chip">Progressif</span>
+            <span class="feature-chip">Accompagnement</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon" aria-hidden="true">👧</div>
+            <div>
+              <p class="feature-kicker">Formation</p>
+              <h3 class="feature-title">Basket jeunes</h3>
+            </div>
+          </div>
+          <p class="feature-text">
+            Construire l’avenir du club : apprentissage, plaisir du jeu, progression technique et esprit d’équipe.
+            Une ambition : proposer des catégories adaptées et un cadre éducatif solide.
+          </p>
+          <div class="feature-meta">
+            <span class="feature-chip">Apprentissage</span>
+            <span class="feature-chip">Plaisir</span>
+            <span class="feature-chip">Éducation</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon" aria-hidden="true">♀️</div>
+            <div>
+              <p class="feature-kicker">Développement</p>
+              <h3 class="feature-title">Basket féminin</h3>
+            </div>
+          </div>
+          <p class="feature-text">
+            Encourager et développer la pratique féminine : un club ouvert, accueillant,
+            qui donne envie de rejoindre une équipe et de progresser dans un bon cadre.
+          </p>
+          <div class="feature-meta">
+            <span class="feature-chip">Ouverture</span>
+            <span class="feature-chip">Collectif</span>
+            <span class="feature-chip">Projet</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon" aria-hidden="true">🎪</div>
+            <div>
+              <p class="feature-kicker">Vie du club</p>
+              <h3 class="feature-title">Événements & bénévolat</h3>
+            </div>
+          </div>
+          <p class="feature-text">
+            Un club, c’est un lieu de vie : événements, animations, moments forts et bénévoles.
+            Avec nos partenaires, on construit une aventure durable et locale.
+          </p>
+          <div class="feature-meta">
+            <span class="feature-chip">Esprit famille</span>
             <span class="feature-chip">Bénévolat</span>
+            <span class="feature-chip">Partenaires</span>
           </div>
         </article>
-
-        <article class="feature-card">
-          <div class="feature-top">
-            <div class="feature-icon" aria-hidden="true">🌟</div>
-            <div>
-              <p class="feature-kicker">Accessibilité</p>
-              <h3 class="feature-title">Basket pour tous</h3>
-            </div>
-          </div>
-          <p class="feature-text">
-            Débutants, confirmés, reprise, sport santé : on veut créer des parcours adaptés
-            et accueillir chacun avec bienveillance.
-          </p>
-          <div class="feature-meta">
-            <span class="feature-chip">Loisirs</span>
-            <span class="feature-chip">Sport santé</span>
-            <span class="feature-chip">Inclusion</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- NOS ACTIONS (blocs 2 colonnes, lisibles) -->
-  <section class="section panel">
-    <div class="container">
-      <div class="section-header">
-        <p class="kicker">Notre projet</p>
-        <h2 class="title">Ce que nous développons</h2>
-        <p class="subtitle">Des parcours et des temps forts pour faire vivre le club.</p>
-      </div>
-
-      <div class="two-col">
-        <div class="card info-card">
-          <h3 class="info-title">🏀 Compétition (Séniors)</h3>
-          <p class="info-text">
-            Une équipe sénior engagée en compétition, avec une culture du travail et du collectif.
-          </p>
-          <ul class="info-list">
-            <li>Objectifs de progression</li>
-            <li>Ambiance positive et exigeante</li>
-            <li>Esprit de groupe</li>
-          </ul>
-          <div class="info-actions">
-            <a href="equipes.html" class="btn-outline">Découvrir les équipes</a>
-          </div>
-        </div>
-
-        <div class="card info-card">
-          <h3 class="info-title">🧡 Loisirs, Sport santé & Inclusion</h3>
-          <p class="info-text">
-            Des projets en préparation : section loisir mixte, sport santé, et une dynamique inclusive.
-          </p>
-          <ul class="info-list">
-            <li>Reprise d’activité progressive</li>
-            <li>Basket plaisir, accessible</li>
-            <li>Accueil et accompagnement</li>
-          </ul>
-          <div class="info-actions">
-            <a href="contact.html" class="btn-primary">Demander des infos</a>
-          </div>
-        </div>
       </div>
 
       <div class="cta-wide">
         <div class="cta-wide-left">
           <h3 style="margin:0 0 .4rem;">Envie de faire partie de l’aventure ?</h3>
           <p style="margin:0;color:var(--muted);max-width:65ch;">
-            Dites-nous votre âge / niveau / dispo : on vous oriente vers le bon créneau et on organise un essai.
+            Dites-nous votre âge / niveau / disponibilités : on vous oriente vers le bon créneau et on organise un essai.
           </p>
         </div>
         <div class="cta-wide-right">
@@ -298,7 +400,7 @@
     <!-- Duplique le contenu (simple) pour un défilement fluide si tu veux -->
     <span class="footer-thanks">Merci à nos sponsors</span>
     <span class="footer-sep">•</span>
-    <a class="footer-sponsor" href="#" target="_blank" rel="noopener">EcoCuisine Houdemont</a>
+    <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 1</a>
     <span class="footer-sep">•</span>
     <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 2</a>
     <span class="footer-sep">•</span>
@@ -310,9 +412,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
