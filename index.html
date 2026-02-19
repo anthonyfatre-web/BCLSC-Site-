@@ -2,9 +2,63 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Basket Club Lay-St-Christophe – Accueil</title>
-  <meta name="description" content="Site officiel du Basket Club Lay-Saint-Christophe : équipe sénior, sections jeunes & loisirs, sport santé et vie du club." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Accueil | Basket Club Lay-Saint-Christophe (BCLSC) – Les Téméraires</title>
+  <meta name="description" content="Club de basket du Bassin de Pompey (Les Téméraires) : séniors, loisirs, jeunes, basket féminin, sport santé, actus, matchs et vie du club." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Canonical (à remplacer par ton vrai domaine quand il existe) -->
+  <link rel="canonical" href="https://votredomaine.fr/" />
+
+  <!-- Icons (à adapter si tu as des fichiers dédiés) -->
+  <link rel="icon" href="images/logo2.png" type="image/png" />
+  <link rel="apple-touch-icon" href="images/logo2.png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Basket Club Lay-Saint-Christophe" />
+  <meta property="og:title" content="Basket Club Lay-Saint-Christophe (BCLSC) – Les Téméraires" />
+  <meta property="og:description" content="Séniors, loisirs, jeunes, basket féminin et sport santé. Rejoignez le BCLSC et vivez le basket avec des valeurs fortes." />
+  <meta property="og:url" content="https://votredomaine.fr/" />
+  <meta property="og:image" content="https://votredomaine.fr/images/og-bclsc.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Basket Club Lay-Saint-Christophe (BCLSC) – Les Téméraires" />
+  <meta name="twitter:description" content="Séniors, loisirs, jeunes, basket féminin et sport santé. Actus, matchs, médias et inscriptions." />
+  <meta name="twitter:image" content="https://votredomaine.fr/images/og-bclsc.jpg" />
+
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <!-- Structured data (à remplacer par ton vrai domaine quand il existe) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SportsTeam",
+        "name": "Basket Club Lay-Saint-Christophe",
+        "alternateName": "BCLSC – Les Téméraires",
+        "sport": "Basketball",
+        "foundingDate": "2024-07",
+        "description": "Association de basket du Bassin de Pompey : séniors, loisirs, jeunes, basket féminin et sport santé.",
+        "areaServed": "Bassin de Pompey",
+        "url": "https://votredomaine.fr/",
+        "logo": "https://votredomaine.fr/images/logo2.png"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Basket Club Lay-Saint-Christophe",
+        "url": "https://votredomaine.fr/",
+        "inLanguage": "fr-FR"
+      }
+    ]
+  }
+  </script>
 
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
@@ -17,7 +71,7 @@
     <nav class="nav" id="nav">
       <div class="nav-left">
         <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">
-          <img src="images/logo2.png" alt="Logo Basket Club Lay-Saint-Christophe" />
+          <img src="images/logo2.png" alt="Logo Basket Club Lay-Saint-Christophe" width="64" height="64" />
         </a>
 
         <div class="nav-brand">
@@ -84,15 +138,27 @@
 
 <main>
 
-  <!-- PRÉSENTATION (style cartes, comme "Nos piliers") -->
+  <!-- PRÉSENTATION (style cartes) -->
   <section class="section panel">
     <div class="container">
       <div class="section-header">
         <p class="kicker">Présentation</p>
-        <h2 class="title">Bienvenue au BCLSC</h2>
+        <h1 class="title">Bienvenue au BCLSC</h1>
         <p class="subtitle">
           Une association née en juillet 2024 pour faire grandir le basket près de chez nous, dans le Bassin de Pompey.
         </p>
+
+        <!-- Logo (identité forte, responsive, sans toucher au CSS) -->
+        <div style="margin-top:1.05rem; display:flex; justify-content:center;">
+          <img
+            src="images/logo2.png"
+            alt="Logo Basket Club Lay-Saint-Christophe"
+            width="220"
+            height="220"
+            loading="lazy"
+            style="width:min(190px,60vw); height:auto; filter: drop-shadow(0 16px 60px rgba(0,0,0,0.65));"
+          />
+        </div>
       </div>
 
       <div class="feature-grid">
@@ -101,7 +167,7 @@
             <div class="feature-icon" aria-hidden="true">🦁</div>
             <div>
               <p class="feature-kicker">Notre histoire</p>
-              <h3 class="feature-title">Une bande de copains, un vrai projet</h3>
+              <h2 class="feature-title">Une bande de copains, un vrai projet</h2>
             </div>
           </div>
           <p class="feature-text">
@@ -121,7 +187,7 @@
             <div class="feature-icon" aria-hidden="true">🤝</div>
             <div>
               <p class="feature-kicker">Nos valeurs</p>
-              <h3 class="feature-title">Respect, partage, inclusion</h3>
+              <h2 class="feature-title">Respect, partage, inclusion</h2>
             </div>
           </div>
           <p class="feature-text">
@@ -138,29 +204,29 @@
 
         <article class="feature-card">
           <div class="feature-top">
-            <div class="feature-icon" aria-hidden="true">🏀</div>
+            <div class="feature-icon" aria-hidden="true">🌟</div>
             <div>
               <p class="feature-kicker">Notre ambition</p>
-              <h3 class="feature-title">Progresser ensemble, avec le sourire</h3>
+              <h2 class="feature-title">Un club accessible à tous</h2>
             </div>
           </div>
           <p class="feature-text">
-			Porter un vrai projet de club : structurer le basket sur notre territoire, accueillir
-			tous les profils et créer des sections qui grandissent avec vous. Basket jeunes,
-			basket féminin, loisirs et sport santé : un club humain, ambitieux et inclusif.
-			</p>
-				<div class="feature-meta">
-			<span class="feature-chip">Projet club</span>
-			<span class="feature-chip">Basket pour tous</span>
-			<span class="feature-chip">Territoire</span>
-				</div>
+            Construire un club ouvert et durable : développer le basket pour tous les publics.
+            Séniors, jeunes, basket féminin, loisirs, sport santé… avec des parcours adaptés,
+            un encadrement bienveillant et une vraie place pour chacun, quel que soit son niveau.
+          </p>
+          <div class="feature-meta">
+            <span class="feature-chip">Jeunes</span>
+            <span class="feature-chip">Basket féminin</span>
+            <span class="feature-chip">Sport santé</span>
+          </div>
         </article>
       </div>
 
     </div>
   </section>
 
-  <!-- À LA UNE / ANNONCES (remplace l'ancien bloc "Nos piliers") -->
+  <!-- À LA UNE / ANNONCES -->
   <section class="section panel">
     <div class="container">
       <div class="section-header">
@@ -246,7 +312,7 @@
     </div>
   </section>
 
-  <!-- INFOS PRATIQUES (bloc) -->
+  <!-- INFOS PRATIQUES -->
   <section class="section panel">
     <div class="container">
       <div class="section-header">
@@ -324,7 +390,6 @@
       <span class="footer-thanks">Merci à nos sponsors</span>
       <span class="footer-sep">•</span>
 
-      <!-- Remplace/ajoute tes sponsors -->
       <a class="footer-sponsor" href="#" target="_blank" rel="noopener">EcoCuisine Houdemont</a>
       <span class="footer-sep">•</span>
       <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 2</a>
@@ -332,7 +397,6 @@
       <a class="footer-sponsor" href="#" target="_blank" rel="noopener">Sponsor 3</a>
       <span class="footer-sep">•</span>
 
-      <!-- Duplique le contenu pour un défilement fluide -->
       <span class="footer-thanks">Merci à nos sponsors</span>
       <span class="footer-sep">•</span>
       <a class="footer-sponsor" href="#" target="_blank" rel="noopener">EcoCuisine Houdemont</a>
